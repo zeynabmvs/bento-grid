@@ -51,11 +51,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ======== Global ======== */
+:root {
+  --mobile-breakpoint: 375px;
+  --desktop-breakpoint: 1440px;
+
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
+  font-size: 18px;
 }
 
 
