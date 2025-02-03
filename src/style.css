@@ -3,7 +3,9 @@
 /* ======== CSS Reset from Josh Comeau ======== */
 
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -20,18 +22,31 @@ body {
 }
 
 /* 5. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 6. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -39,14 +54,20 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -61,6 +82,9 @@ h1, h2, h3, h4, h5, h6 {
   --yellow-500: hsl(39, 100%, 71%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 7%);
+
+  --item-width: 232px;
+  --grid-gap: 32px;
 }
 
 body {
@@ -69,11 +93,116 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+  counter-reset: grid-items;
+  padding: 2rem 1rem;
 }
 
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  /* padding: 0 16px; */
+}
 
+/* ======== Grid ======== */
 
+.bento-grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
 
+.bento-grid-item {
+  background-color: blanchedalmond;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.bento-grid-item::before {
+  counter-increment: grid-items;
+  content: "Section " counter(grid-items) ". ";
+}
+
+/* Mobile grid (no specific columns/rows) */
+.bento-grid {
+  grid-template-areas: unset;
+}
+
+.subgrid-1,
+.subgrid-2,
+.subgrid-3 {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.subgrid-1 {
+  order: 2;
+}
+
+.subgrid-2 {
+  order: 0;
+}
+
+.subgrid-3 {
+  order: 1;
+}
+
+.subgrid-3 > div:first-child {
+  order: 1;
+}
+.subgrid-3 > div:last-child {
+  order: 0;
+}
+
+/* Desktop grid (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  .subgrid-3 > div:first-child {
+    order: 0;
+  }
+  .subgrid-3 > div:last-child {
+    order: 1;
+  }
+
+  .bento-grid {
+    grid-template-areas:
+      "subgrid1 subgrid2"
+      "subgrid1 subgrid3";
+  }
+
+  .bento-grid-item:not(.wide-item) {
+    width: var(--item-width);
+  }
+
+  .subgrid-1 {
+    grid-area: subgrid1;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .subgrid-2 {
+    grid-template-areas:
+      "fiveStars fiveStars schedule"
+      "platforms consistentSchedule schedule";
+  }
+
+  .subgrid-3 {
+    grid-area: subgrid3;
+    grid-template-columns: auto 2fr;
+  }
+
+  #five-stars {
+    grid-area: fiveStars;
+  }
+
+  #schedule {
+    grid-area: schedule;
+  }
+
+  #consistent-schedule {
+    grid-area: consistentSchedule;
+  }
+
+  #platforms {
+    grid-area: platforms;
+  }
+}
 /* ======== Footer ======== */
 .attribution {
   font-size: 11px;
