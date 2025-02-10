@@ -16,13 +16,13 @@
 
 body {
   /* 3. Add accessible line-height */
-  line-height: 1.3;
+  /* line-height: 1.3; */
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
 
 /* 5. Improve media defaults */
-img,
+/* img, */
 picture,
 video,
 canvas,
@@ -99,7 +99,7 @@ body {
 }
 
 .container {
-  max-width: 60rem;
+  max-width: 1120px;
   margin: 0 auto;
   /* padding: 0 16px; */
 }
@@ -251,11 +251,16 @@ body {
   color: var(--purple-500);
 }
 
+#create-post img {
+  /* max-width: 100%;
+  height: auto; */
+}
+
 /* ======== Grid Items' styles 3 ======== */
 #ai-content {
   background-color: var(--yellow-500);
   text-align: left;
-  padding: 24px;
+  padding: 24px 24px 16px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -285,15 +290,110 @@ body {
   align-self: baseline;
   position: absolute;
   inset: 24px;
-  top: auto
+  top: auto;
 }
 #platforms img {
-  scale: 1.2;
+  width: 120%;
   box-shadow: -4px 19px 15px 6px var(--purple-50);
   border-radius: 40px;
   position: absolute;
-  left: 20%;
+  left: 10%;
   top: 30px;
+}
+
+/* ======== Grid Items' styles 5 ======== */
+#consistent-schedule {
+  padding: 24px;
+  background-color: var(--yellow-500);
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+}
+
+#consistent-schedule p {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 0.9;
+  align-self: baseline;
+}
+#consistent-schedule img {
+  box-shadow: -4px 19px 15px 6px var(--purple-50);
+  width: calc(var(--item-width) - 48px);
+  position: absolute;
+  bottom: -56px;
+}
+
+/* ======== Grid Items' styles 6 ======== */
+#schedule {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--purple-100);
+  padding: 48px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+#schedule h3 {
+  font-size: 29px;
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 0.9;
+}
+#schedule img {
+  width: 160%;
+  left: 11%;
+  position: relative;
+  margin-block: 20px;
+}
+#schedule p {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ======== Grid Items' styles 7 ======== */
+#audience-growth {
+  padding: 24px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#audience-growth h3 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+#audience-growth img {
+  width: calc(var(--item-width) - 48px);
+}
+#audience-growth p {
+  font-size: 16px;
+}
+
+/* ======== Grid Items' styles 8 ======== */
+#followers {
+  display: flex;
+  align-items: center;
+  background-color: var(--purple-500);
+  padding: 24px;
+}
+#followers h3 {
+  color: var(--white);
+  font-size: 32px;
+  flex-basis: 1;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#followers img {
+  width: 46%;
+}
+/* ======== Utilities ======== */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ======== Footer ======== */
