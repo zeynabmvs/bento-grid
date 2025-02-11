@@ -282,21 +282,76 @@ body {
   animation: slide-out 0.4s ease-in-out forwards;
 }
 
+#create-post > div {
+  position: relative;
+}
+
 #create-post p {
   font-size: 32px;
   line-height: 30px;
   font-weight: 500;
   margin-bottom: 16px;
   letter-spacing: -2px;
+  width: 80%;
 }
 
 #create-post i {
   color: var(--purple-500);
 }
 
-#create-post img {
-  /* max-width: 100%;
-  height: auto; */
+#create-post button {
+  background-color: var(--yellow-500);
+  border-radius: 50px;
+  height: 65px;
+  width: calc(var(--item-width) - 24px);
+  border: none;
+  color: var(--purple-500);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: inherit;
+  border-inline-end: 1px solid #454545;
+  border-block-end: 5px solid #454545;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+#create-post button + svg {
+  position: absolute;
+  left: 40%;
+  top: 70%;
+  animation: clickButtonReverse 0.3s ease forwards;
+}
+#create-post button:hover {
+  border-inline-end: 0px solid #454545;
+  border-block-end: 2px solid #454545;
+  transform: translateY(3px);
+}
+
+#create-post button:hover + svg {
+  animation: clickButton 0.2s ease forwards;
+}
+
+@keyframes clickButton {
+  from {
+    left: 40%;
+    top: 70%;
+  }
+  to {
+    left: 45%;
+    top: 72%;
+  }
+}
+@keyframes clickButtonReverse {
+  from {
+    left: 45%;
+    top: 72%;
+  }
+  to {
+    left: 40%;
+    top: 70%;
+  }
 }
 
 /* ======== Grid Items' styles 3 ======== */
@@ -482,7 +537,6 @@ body {
   width: 46%;
 }
 
-
 /* ======== Utilities ======== */
 .img-responsive {
   max-width: 100%;
@@ -494,7 +548,7 @@ body {
 }
 
 .scale-img:hover img {
-  scale: 1.02
+  scale: 1.02;
 }
 
 /* ======== Footer ======== */
