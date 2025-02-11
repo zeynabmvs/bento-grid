@@ -260,12 +260,12 @@ body {
   animation: slide-in 0.4s ease-in-out backwards;
 }
 
-@keyframes slide-out{
-  0%{
-    top: 0
+@keyframes slide-out {
+  0% {
+    top: 0;
   }
-  100%{
-    top: -100%
+  100% {
+    top: -100%;
   }
 }
 
@@ -342,11 +342,12 @@ body {
   position: absolute;
   left: 10%;
   top: 30px;
-  animation: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 #platforms img:hover {
   box-shadow: -4px 19px 20px 16px var(--purple-25);
 }
+
 /* ======== Grid Items' styles 5 ======== */
 #consistent-schedule {
   padding: 24px;
@@ -424,22 +425,76 @@ body {
   align-items: center;
   background-color: var(--purple-500);
   padding: 24px;
+  position: relative;
+  z-index: 10;
+  /* overflow: hidden; */
 }
+#followers::before {
+  background-color: var(--purple-100);
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 8px;
+  z-index: -1;
+  animation: closeBG 0.4s ease-in-out backwards 0.1s;
+}
+
+@keyframes openBG {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes closeBG {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+#followers:hover::before {
+  animation: openBG 0.4s ease-in-out forwards;
+}
+
 #followers h3 {
   color: var(--white);
   font-size: 32px;
   flex-basis: 1;
   line-height: 1;
   font-weight: 600;
+  transition: color 0.4s ease-in-out;
 }
-
+#followers:hover h3 {
+  color: var(--black);
+}
 #followers img {
   width: 46%;
 }
+
+
 /* ======== Utilities ======== */
 .img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+.scale-img img {
+  transition: all 0.2s ease-in-out;
+}
+
+.scale-img:hover img {
+  scale: 1.02
 }
 
 /* ======== Footer ======== */
