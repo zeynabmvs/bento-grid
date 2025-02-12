@@ -116,6 +116,17 @@ body {
   background-color: blanchedalmond;
   border-radius: 8px;
   padding: 32px;
+
+  /* for animation on load */
+  transform: translateY(100px); /* Initial position below */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Smooth animation */
+
+}
+
+.bento-grid-item.active {
+  transform: translateY(0); /* Move to the final position */
+  opacity: 1;
 }
 
 /* .bento-grid-item::before {
@@ -555,6 +566,7 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding-top: 32px;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
