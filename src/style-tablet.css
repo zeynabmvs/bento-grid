@@ -1,41 +1,39 @@
-@media screen and (min-width: 768px) {
-  .bento-grid {
-    padding: unset;
-  }
-  .subgrid-1 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .subgrid-3 {
-    grid-template-columns: 1fr 2fr;
-  }
+.bento-grid {
+  padding: unset;
+}
+.subgrid-1 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.subgrid-3 {
+  grid-template-columns: 1fr 2fr;
+}
 
-  .subgrid-3 > div:first-child {
-    order: 0;
-  }
-  .subgrid-3 > div:last-child {
-    order: 1;
-  }
+.subgrid-3 > div:first-child {
+  order: 0;
+}
+.subgrid-3 > div:last-child {
+  order: 1;
+}
 
-  #five-stars {
-    grid-area: fiveStars;
-  }
+#five-stars {
+  grid-area: fiveStars;
+}
 
-  #schedule {
-    grid-area: schedule;
-  }
+#schedule {
+  grid-area: schedule;
+}
 
-  #consistent-schedule {
-    grid-area: consistentSchedule;
-  }
+#consistent-schedule {
+  grid-area: consistentSchedule;
+}
 
-  #platforms {
-    grid-area: platforms;
-  }
+#platforms {
+  grid-area: platforms;
+}
 
-  .subgrid-2 {
-    grid-template-areas:
-      "fiveStars fiveStars"
-      "platforms  schedule"
-      "consistentSchedule schedule";
-  }
+.subgrid-2 {
+  grid-template-areas:
+    "fiveStars fiveStars"
+    "platforms  schedule"
+    "consistentSchedule schedule";
 }
