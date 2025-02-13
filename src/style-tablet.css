@@ -1,0 +1,5 @@
+@media screen and (min-width: 768px) {
+  .bento-grid {
+    padding: unset;
+  }
+}

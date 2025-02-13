@@ -95,14 +95,13 @@ body {
   font-style: normal;
   font-size: 18px;
   counter-reset: grid-items;
-  padding: 1rem;
   background-color: #f5f5f5;
 }
 
 .container {
   max-width: 1120px;
   margin: 0 auto;
-  /* padding: 0 16px; */
+  padding: 16px;
 }
 
 /* ======== Grid ======== */
@@ -110,6 +109,7 @@ body {
 .bento-grid {
   display: grid;
   gap: var(--grid-gap);
+  padding-top: 32px;
 }
 
 .bento-grid-item {
@@ -121,7 +121,6 @@ body {
   transform: translateY(100px); /* Initial position below */
   opacity: 0; /* Initially invisible */
   transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Smooth animation */
-
 }
 
 .bento-grid-item.active {
@@ -230,7 +229,7 @@ body {
 }
 #five-stars h2 {
   font-size: 48px;
-  line-height: 57px;
+  line-height: 1;
 }
 #five-stars h2 span {
   color: var(--yellow-500);
@@ -248,49 +247,11 @@ body {
 #create-post {
   background-color: var(--purple-100);
   text-align: left;
-  padding: 24px;
+  padding: 32px;
   align-content: center;
   z-index: 10;
   position: relative;
   overflow: hidden;
-}
-
-#create-post::before {
-  background-color: var(--yellow-100);
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  z-index: -1;
-  animation: slide-in 0.4s ease-in-out backwards;
-}
-
-@keyframes slide-out {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -100%;
-  }
-}
-
-@keyframes slide-in {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-#create-post:hover::before {
-  animation: slide-out 0.4s ease-in-out forwards;
 }
 
 #create-post > div {
@@ -301,7 +262,7 @@ body {
   font-size: 32px;
   line-height: 30px;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -2px;
   width: 80%;
 }
@@ -332,37 +293,6 @@ body {
   position: absolute;
   left: 40%;
   top: 70%;
-  animation: clickButtonReverse 0.3s ease forwards;
-}
-#create-post button:hover {
-  border-inline-end: 0px solid #454545;
-  border-block-end: 2px solid #454545;
-  transform: translateY(3px);
-}
-
-#create-post button:hover + svg {
-  animation: clickButton 0.2s ease forwards;
-}
-
-@keyframes clickButton {
-  from {
-    left: 40%;
-    top: 70%;
-  }
-  to {
-    left: 45%;
-    top: 72%;
-  }
-}
-@keyframes clickButtonReverse {
-  from {
-    left: 45%;
-    top: 72%;
-  }
-  to {
-    left: 40%;
-    top: 70%;
-  }
 }
 
 /* ======== Grid Items' styles 3 ======== */
@@ -378,17 +308,20 @@ body {
   font-size: 32px;
   line-height: 30px;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   letter-spacing: -2px;
+  width: 90%;
 }
-
+#ai-content img {
+  width: 70%;
+}
 /* ======== Grid Items' styles 4 ======== */
 #platforms {
-  padding: 24px;
   background-color: var(--white);
   text-align: left;
   overflow: hidden;
   position: relative;
+  padding: 16px;
 }
 
 #platforms p {
@@ -397,30 +330,21 @@ body {
   color: var(--black);
   line-height: 0.9;
   align-self: baseline;
-  position: absolute;
-  inset: 24px;
-  top: auto;
 }
 #platforms img {
-  width: 120%;
   box-shadow: -4px 19px 15px 6px var(--purple-15);
   border-radius: 40px;
-  position: absolute;
-  left: 10%;
-  top: 30px;
-  transition: box-shadow 0.3s ease;
-}
-#platforms img:hover {
-  box-shadow: -4px 19px 20px 16px var(--purple-25);
+  margin-bottom: 16px;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ======== Grid Items' styles 5 ======== */
 #consistent-schedule {
-  padding: 24px;
+  padding: 16px 16px 0 16px;
   background-color: var(--yellow-500);
   text-align: left;
   overflow: hidden;
-  position: relative;
 }
 
 #consistent-schedule p {
@@ -429,12 +353,13 @@ body {
   color: var(--black);
   line-height: 0.9;
   align-self: baseline;
+  margin-bottom: 16px;
 }
+
 #consistent-schedule img {
-  box-shadow: -4px 19px 15px 6px var(--purple-50);
-  width: calc(var(--item-width) - 48px);
-  position: absolute;
-  bottom: -56px;
+  max-width: 70%;
+  height: auto;
+  margin-bottom: -25px;
 }
 
 /* ======== Grid Items' styles 6 ======== */
@@ -442,9 +367,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--purple-100);
-  padding: 48px 24px;
+  padding: 32px 16px;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  gap: 24px;
 }
 
 #schedule h3 {
@@ -454,14 +381,11 @@ body {
   line-height: 0.9;
 }
 #schedule img {
-  width: 160%;
-  left: 11%;
-  position: relative;
-  margin-block: 20px;
 }
 #schedule p {
   font-size: 16px;
   line-height: 1;
+  width: 90%;
 }
 
 /* ======== Grid Items' styles 7 ======== */
@@ -470,7 +394,8 @@ body {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 20px;
 }
 
 #audience-growth h3 {
@@ -479,7 +404,8 @@ body {
   line-height: 1.2;
 }
 #audience-growth img {
-  width: calc(var(--item-width) - 48px);
+  width: 180px;
+  height: auto;
 }
 #audience-growth p {
   font-size: 16px;
@@ -488,49 +414,14 @@ body {
 /* ======== Grid Items' styles 8 ======== */
 #followers {
   display: flex;
+  flex-direction: column;
   align-items: center;
   background-color: var(--purple-500);
-  padding: 24px;
+  padding: 24px 56px;
   position: relative;
   z-index: 10;
+  text-align: center;
   /* overflow: hidden; */
-}
-#followers::before {
-  background-color: var(--purple-100);
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 0;
-  height: 100%;
-  border-radius: 8px;
-  z-index: -1;
-  animation: closeBG 0.4s ease-in-out backwards 0.1s;
-}
-
-@keyframes openBG {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes closeBG {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0%;
-  }
-}
-
-#followers:hover::before {
-  animation: openBG 0.4s ease-in-out forwards;
 }
 
 #followers h3 {
@@ -539,27 +430,16 @@ body {
   flex-basis: 1;
   line-height: 1;
   font-weight: 600;
-  transition: color 0.4s ease-in-out;
 }
-#followers:hover h3 {
-  color: var(--black);
-}
+
 #followers img {
-  width: 46%;
+  margin-bottom: 32px;
 }
 
 /* ======== Utilities ======== */
 .img-responsive {
   max-width: 100%;
   height: auto;
-}
-
-.scale-img img {
-  transition: all 0.2s ease-in-out;
-}
-
-.scale-img:hover img {
-  scale: 1.02;
 }
 
 /* ======== Footer ======== */
