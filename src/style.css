@@ -164,59 +164,6 @@ body {
   order: 0;
 }
 
-/* Desktop grid (min-width: 1024px) */
-@media screen and (min-width: 1024px) {
-  .subgrid-3 > div:first-child {
-    order: 0;
-  }
-  .subgrid-3 > div:last-child {
-    order: 1;
-  }
-
-  .bento-grid {
-    grid-template-areas:
-      "subgrid1 subgrid2"
-      "subgrid1 subgrid3";
-  }
-
-  .bento-grid-item:not(.wide-item) {
-    min-width: var(--item-width);
-    min-height: var(--item-width);
-  }
-
-  .subgrid-1 {
-    grid-area: subgrid1;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .subgrid-2 {
-    grid-template-areas:
-      "fiveStars fiveStars schedule"
-      "platforms consistentSchedule schedule";
-  }
-
-  .subgrid-3 {
-    grid-area: subgrid3;
-    grid-template-columns: auto 2fr;
-  }
-
-  #five-stars {
-    grid-area: fiveStars;
-  }
-
-  #schedule {
-    grid-area: schedule;
-  }
-
-  #consistent-schedule {
-    grid-area: consistentSchedule;
-  }
-
-  #platforms {
-    grid-area: platforms;
-  }
-}
-
 /* ======== Grid Items' styles 1 ======== */
 #five-stars {
   background-color: var(--purple-500);
@@ -245,7 +192,7 @@ body {
 
 /* ======== Grid Items' styles 2 ======== */
 #create-post {
-  background-color: var(--purple-100);
+  background-color: var(--purple-500);
   text-align: left;
   padding: 32px;
   align-content: center;
@@ -265,6 +212,7 @@ body {
   margin-bottom: 20px;
   letter-spacing: -2px;
   width: 80%;
+  color: var(--white);
 }
 
 #create-post i {
@@ -394,7 +342,7 @@ body {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  justify-content: center;
   gap: 20px;
 }
 

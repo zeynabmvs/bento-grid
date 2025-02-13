@@ -56,6 +56,55 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .bento-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    padding-top: 32px;
+  }
+
+  .bento-grid {
+    grid-template-areas:
+      "subgrid1 subgrid2"
+      "subgrid1 subgrid3";
+  }
+
+  .bento-grid-item:not(.wide-item) {
+    min-width: var(--item-width);
+    min-height: var(--item-width);
+  }
+
+  .subgrid-1 {
+    grid-area: subgrid1;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .subgrid-2 {
+    grid-template-areas:
+      "fiveStars fiveStars schedule"
+      "platforms consistentSchedule schedule";
+  }
+
+  .subgrid-3 {
+    grid-area: subgrid3;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  #five-stars {
+    grid-area: fiveStars;
+  }
+
+  #schedule {
+    grid-area: schedule;
+  }
+
+  #consistent-schedule {
+    grid-area: consistentSchedule;
+  }
+
+  #platforms {
+    grid-area: platforms;
+  }
+
   #platforms {
     padding: 24px;
   }
@@ -119,6 +168,7 @@
   #followers {
     flex-direction: row;
     text-align: left;
+    padding: 24px;
   }
   #followers::before {
     background-color: var(--purple-100);
@@ -152,6 +202,7 @@
   }
 
   #create-post {
+    background-color: var(--purple-100);
     padding: 24px;
   }
   #create-post p {
