@@ -192,7 +192,7 @@ body {
 
 /* ======== Grid Items' styles 2 ======== */
 #create-post {
-  background-color: var(--purple-500);
+  background-color: var(--yellow-100);
   text-align: left;
   padding: 32px;
   align-content: center;
@@ -212,7 +212,7 @@ body {
   margin-bottom: 20px;
   letter-spacing: -2px;
   width: 80%;
-  color: var(--white);
+  color: var(--black);
 }
 
 #create-post i {
