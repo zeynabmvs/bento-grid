@@ -399,3 +399,23 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+html,
+body {
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, var(--purple-500), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+  transition: transform 0.1s ease-out;
+}
+
+body:hover .cursor {
+  transform: scale(2);
+  box-shadow: 0 0 5px var(--purple-500), 0 0 10px var(--purple-500);
+}
