@@ -2,30 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Default Stylesheet for Mobile -->
+    <title>Bento grid</title>
 
-    <!-- Tablet Styles -->
-    <link
-      rel="stylesheet"
-      href="data:text/css;base64,LmJlbnRvLWdyaWQgewogIHBhZGRpbmc6IHVuc2V0Owp9Ci5zdWJncmlkLTEgewogIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KDIsIDFmcik7Cn0KLnN1YmdyaWQtMyB7CiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxZnIgMmZyOwp9Cgouc3ViZ3JpZC0zID4gZGl2OmZpcnN0LWNoaWxkIHsKICBvcmRlcjogMDsKfQouc3ViZ3JpZC0zID4gZGl2Omxhc3QtY2hpbGQgewogIG9yZGVyOiAxOwp9CgojZml2ZS1zdGFycyB7CiAgZ3JpZC1hcmVhOiBmaXZlU3RhcnM7Cn0KCiNzY2hlZHVsZSB7CiAgZ3JpZC1hcmVhOiBzY2hlZHVsZTsKfQoKI2NvbnNpc3RlbnQtc2NoZWR1bGUgewogIGdyaWQtYXJlYTogY29uc2lzdGVudFNjaGVkdWxlOwp9CgojcGxhdGZvcm1zIHsKICBncmlkLWFyZWE6IHBsYXRmb3JtczsKfQoKLnN1YmdyaWQtMiB7CiAgZ3JpZC10ZW1wbGF0ZS1hcmVhczoKICAgICJmaXZlU3RhcnMgZml2ZVN0YXJzIgogICAgInBsYXRmb3JtcyAgc2NoZWR1bGUiCiAgICAiY29uc2lzdGVudFNjaGVkdWxlIHNjaGVkdWxlIjsKfQo="
-      media="(min-width: 768px)"
-    />
-
-    <!-- Desktop Styles -->
-    <link
-      rel="stylesheet"
-      href="data:text/css;base64,QGtleWZyYW1lcyBvcGVuQkcgewogIGZyb20gewogICAgd2lkdGg6IDA7CiAgfQogIHRvIHsKICAgIHdpZHRoOiAxMDAlOwogIH0KfQoKQGtleWZyYW1lcyBjbG9zZUJHIHsKICBmcm9tIHsKICAgIHdpZHRoOiAxMDAlOwogIH0KICB0byB7CiAgICB3aWR0aDogMCU7CiAgfQp9CgpAa2V5ZnJhbWVzIGNsaWNrQnV0dG9uIHsKICBmcm9tIHsKICAgIGxlZnQ6IDQwJTsKICAgIHRvcDogNzAlOwogIH0KICB0byB7CiAgICBsZWZ0OiA0NSU7CiAgICB0b3A6IDcyJTsKICB9Cn0KQGtleWZyYW1lcyBjbGlja0J1dHRvblJldmVyc2UgewogIGZyb20gewogICAgbGVmdDogNDUlOwogICAgdG9wOiA3MiU7CiAgfQogIHRvIHsKICAgIGxlZnQ6IDQwJTsKICAgIHRvcDogNzAlOwogIH0KfQoKQGtleWZyYW1lcyBzbGlkZS1vdXQgewogIDAlIHsKICAgIHRvcDogMDsKICB9CiAgMTAwJSB7CiAgICB0b3A6IC0xMDAlOwogIH0KfQoKQGtleWZyYW1lcyBzbGlkZS1pbiB7CiAgMCUgewogICAgdG9wOiAtMTAwJTsKICB9CiAgMTAwJSB7CiAgICB0b3A6IDA7CiAgfQp9CgouYmVudG8tZ3JpZCB7CiAgZGlzcGxheTogZ3JpZDsKICBnYXA6IHZhcigtLWdyaWQtZ2FwKTsKICBwYWRkaW5nLXRvcDogMzJweDsKICBncmlkLXRlbXBsYXRlLWFyZWFzOgogICAgInN1YmdyaWQxIHN1YmdyaWQyIgogICAgInN1YmdyaWQxIHN1YmdyaWQzIjsKfQoKLmJlbnRvLWdyaWQtaXRlbTpub3QoLndpZGUtaXRlbSkgewogIG1pbi13aWR0aDogdmFyKC0taXRlbS13aWR0aCk7CiAgbWluLWhlaWdodDogdmFyKC0taXRlbS13aWR0aCk7Cn0KCi5zdWJncmlkLTEgewogIGdyaWQtYXJlYTogc3ViZ3JpZDE7CiAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiAxZnIgMWZyOwogIGdyaWQtdGVtcGxhdGUtY29sdW1uczogdW5zZXQ7Cn0KCi5zdWJncmlkLTIgewogIGdyaWQtdGVtcGxhdGUtYXJlYXM6CiAgICAiZml2ZVN0YXJzIGZpdmVTdGFycyBzY2hlZHVsZSIKICAgICJwbGF0Zm9ybXMgY29uc2lzdGVudFNjaGVkdWxlIHNjaGVkdWxlIjsKfQoKLnN1YmdyaWQtMyB7CiAgZ3JpZC1hcmVhOiBzdWJncmlkMzsKICBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAyZnI7Cn0KCiNmaXZlLXN0YXJzIHsKICBncmlkLWFyZWE6IGZpdmVTdGFyczsKfQoKI3NjaGVkdWxlIHsKICBncmlkLWFyZWE6IHNjaGVkdWxlOwp9CgojY29uc2lzdGVudC1zY2hlZHVsZSB7CiAgZ3JpZC1hcmVhOiBjb25zaXN0ZW50U2NoZWR1bGU7Cn0KCiNwbGF0Zm9ybXMgewogIGdyaWQtYXJlYTogcGxhdGZvcm1zOwp9CgojcGxhdGZvcm1zIHsKICBwYWRkaW5nOiAyNHB4Owp9CgojcGxhdGZvcm1zIGltZyB7CiAgd2lkdGg6IDEyMCU7CiAgcG9zaXRpb246IGFic29sdXRlOwogIGxlZnQ6IDEwJTsKICB0b3A6IDMwcHg7CiAgbWF4LXdpZHRoOiB1bnNldDsKICBoZWlnaHQ6IHVuc2V0OwogIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zcyBlYXNlOwp9CgojcGxhdGZvcm1zIGltZzpob3ZlciB7CiAgYm94LXNoYWRvdzogLTRweCAxOXB4IDIwcHggMTZweCB2YXIoLS1wdXJwbGUtMjUpOwp9CgojcGxhdGZvcm1zIHAgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBpbnNldDogMjRweDsKICB0b3A6IGF1dG87Cn0KCiNjb25zaXN0ZW50LXNjaGVkdWxlIHsKICBwYWRkaW5nOiAyNHB4OwogIHBvc2l0aW9uOiByZWxhdGl2ZTsKfQoKI2NvbnNpc3RlbnQtc2NoZWR1bGUgcCB7CiAgbWFyZ2luLWJvdHRvbTogdW5zZXQ7Cn0KCiNjb25zaXN0ZW50LXNjaGVkdWxlIGltZyB7CiAgd2lkdGg6IGNhbGMoMTAwJSAtIDQ4cHgpOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBib3R0b206IC01NnB4OwogIGhlaWdodDogdW5zZXQ7CiAgbWF4LXdpZHRoOiB1bnNldDsKICBtYXJnaW4tYm90dG9tOiB1bnNldDsKfQoKI3NjaGVkdWxlIHsKICBwYWRkaW5nOiA0OHB4IDI0cHg7CiAgcG9zaXRpb246IHJlbGF0aXZlOwogIHRleHQtYWxpZ246IGxlZnQ7CiAgZ2FwOiAwOwp9Cgojc2NoZWR1bGUgaDMgewp9CiNzY2hlZHVsZSBpbWcgewogIHdpZHRoOiAxNjAlOwogIGxlZnQ6IDExJTsKICBwb3NpdGlvbjogcmVsYXRpdmU7CiAgbWFyZ2luLWJsb2NrOiAyMHB4Owp9CiNzY2hlZHVsZSBwIHsKICB3aWR0aDogMTAwJTsKfQojZm9sbG93ZXJzIHsKICBmbGV4LWRpcmVjdGlvbjogcm93OwogIHRleHQtYWxpZ246IGxlZnQ7CiAgcGFkZGluZzogMjRweDsKfQojZm9sbG93ZXJzOjpiZWZvcmUgewogIGJhY2tncm91bmQtY29sb3I6IHZhcigtLXB1cnBsZS0xMDApOwogIGRpc3BsYXk6IGJsb2NrOwogIGNvbnRlbnQ6ICIiOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICB0b3A6IDA7CiAgYm90dG9tOiAwOwogIGxlZnQ6IDA7CiAgcmlnaHQ6IDA7CiAgd2lkdGg6IDA7CiAgaGVpZ2h0OiAxMDAlOwogIGJvcmRlci1yYWRpdXM6IDhweDsKICB6LWluZGV4OiAtMTsKICBhbmltYXRpb246IGNsb3NlQkcgMC40cyBlYXNlLWluLW91dCBiYWNrd2FyZHMgMC4xczsKfQoKI2ZvbGxvd2VycyBoMyB7CiAgdHJhbnNpdGlvbjogY29sb3IgMC40cyBlYXNlLWluLW91dDsKfQoKI2ZvbGxvd2Vyczpob3ZlciBoMyB7CiAgY29sb3I6IHZhcigtLWJsYWNrKTsKfQojZm9sbG93ZXJzIGltZyB7CiAgd2lkdGg6IDQ2JTsKICBtYXJnaW4tYm90dG9tOiAwOwp9CiNmb2xsb3dlcnM6aG92ZXI6OmJlZm9yZSB7CiAgYW5pbWF0aW9uOiBvcGVuQkcgMC40cyBlYXNlLWluLW91dCBmb3J3YXJkczsKfQoKI2NyZWF0ZS1wb3N0IHsKICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1wdXJwbGUtMTAwKTsKICBwYWRkaW5nOiAyNHB4Owp9CiNjcmVhdGUtcG9zdCBwIHsKICBtYXJnaW4tYm90dG9tOiAxNnB4Owp9CiNjcmVhdGUtcG9zdCBidXR0b24gKyBzdmcgewogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICBsZWZ0OiA0MCU7CiAgdG9wOiA3MCU7CiAgYW5pbWF0aW9uOiBjbGlja0J1dHRvblJldmVyc2UgMC4zcyBlYXNlIGZvcndhcmRzOwp9CiNjcmVhdGUtcG9zdCBidXR0b246aG92ZXIgewogIGJvcmRlci1pbmxpbmUtZW5kOiAwcHggc29saWQgIzQ1NDU0NTsKICBib3JkZXItYmxvY2stZW5kOiAycHggc29saWQgIzQ1NDU0NTsKICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoM3B4KTsKfQojY3JlYXRlLXBvc3Q6OmJlZm9yZSB7CiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teWVsbG93LTEwMCk7CiAgZGlzcGxheTogYmxvY2s7CiAgY29udGVudDogIiI7CiAgcG9zaXRpb246IGFic29sdXRlOwogIHRvcDogMDsKICBib3R0b206IDA7CiAgbGVmdDogMDsKICByaWdodDogMDsKICB3aWR0aDogMTAwJTsKICBoZWlnaHQ6IDEwMCU7CiAgYm9yZGVyLXJhZGl1czogOHB4OwogIHotaW5kZXg6IC0xOwogIGFuaW1hdGlvbjogc2xpZGUtaW4gMC40cyBlYXNlLWluLW91dCAwLjNzIGJhY2t3YXJkczsKfQojY3JlYXRlLXBvc3Q6aG92ZXI6OmJlZm9yZSB7CiAgYW5pbWF0aW9uOiBzbGlkZS1vdXQgMC40cyBlYXNlLWluLW91dCAwLjNzIGZvcndhcmRzOwp9CiNjcmVhdGUtcG9zdCBidXR0b246aG92ZXIgKyBzdmcgewogIGFuaW1hdGlvbjogY2xpY2tCdXR0b24gMC4ycyBlYXNlIGZvcndhcmRzOwp9CgojYWktY29udGVudCBoMyB7CiAgbWFyZ2luLWJvdHRvbTogMTZweDsKICB3aWR0aDogMTAwJTsKfQojYWktY29udGVudCBpbWcgewogIHdpZHRoOiAxMDAlOwp9CgojYXVkaWVuY2UtZ3Jvd3RoIGltZyB7CiAgd2lkdGg6IDE1MHB4Owp9Ci5zY2FsZS1pbWcgaW1nIHsKICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlLWluLW91dDsKfQoKLnNjYWxlLWltZzpob3ZlciBpbWcgewogIHNjYWxlOiAxLjA2Owp9Cg=="
-      media="(min-width: 1024px)"
-    />
-
-    <title>Vite App</title>
-
-
-    <script type="module" crossorigin src="/assets/index-BOEwSaYF.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DhPuGCzu.css">
+    <script type="module" crossorigin src="./assets/index-B3b2Q8VC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BE_npcjX.css">
   </head>
   <body>
 
@@ -103,7 +86,7 @@
           <div class="bento-grid-item scale-img" id="ai-content">
             <h3>Write your content using AI.</h3>
             <img
-              src="/assets/images/illustration-ai-content.webp"
+              src="./assets/images/illustration-ai-content.webp"
               alt=""
               class="img-responsive"
             />
@@ -113,13 +96,13 @@
         <div class="subgrid-2">
           <div class="bento-grid-item wide-item" id="five-stars">
             <h2>Social Media <span>10x</span> <i>Faster</i> with AI</h2>
-            <img src="/assets/images/illustration-five-stars.webp" alt="" />
+            <img src="./assets/images/illustration-five-stars.webp" alt="" />
             <span>Over 4,000 5-star reviews</span>
           </div>
 
           <div class="bento-grid-item" id="platforms">
             <img
-              src="/assets/images/illustration-multiple-platforms.webp"
+              src="./assets/images/illustration-multiple-platforms.webp"
               alt=""
             />
             <p>Manage multiple accounts and platforms.</p>
@@ -129,13 +112,13 @@
             <p>Maintain a consistent posting schedule.</p>
 
             <img
-              src="/assets/images/illustration-consistent-schedule.webp"
+              src="./assets/images/illustration-consistent-schedule.webp"
               alt=""
             />
           </div>
           <div class="bento-grid-item scale-img" id="schedule">
             <h3>Schedule to social media.</h3>
-            <img src="/assets/images/illustration-schedule-posts.webp" alt="" />
+            <img src="./assets/images/illustration-schedule-posts.webp" alt="" />
             <p>
               Optimize post timings to publish content at the perfect time for
               your audience.
@@ -148,14 +131,14 @@
             <h3>>56%</h3>
             <p>faster audience growth</p>
             <img
-              src="/assets/images/illustration-audience-growth.webp"
+              src="./assets/images/illustration-audience-growth.webp"
               alt=""
               class="img-responsive"
             />
           </div>
           <div class="bento-grid-item wide-item scale-img" id="followers">
             <img
-              src="/assets/images/illustration-grow-followers.webp"
+              src="./assets/images/illustration-grow-followers.webp"
               alt=""
               class="img-responsive"
             />
