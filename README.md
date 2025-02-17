@@ -27,8 +27,7 @@ Users should be able to:
 ### Screenshot
 
 Here’s a preview of the project:
-
-![Project Screenshot](./screenshot.webp)
+![ScreenRecording2025-02-15at6 24 49PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9b245b9d-c90f-425f-a9c9-fec5d45a1107)
 
 ### Links
 
@@ -58,7 +57,6 @@ Going forward, I want to:
 - [Bento grid examples](https://bentogrids.com/?category=animation) – Ideas for bento grid animations
 - [MDN Web Docs - CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) – Helped refine my animation approach.
 - [Grid Playground](https://flexboxlabs.netlify.app/grid) – A great interactive tool for practicing CSS Grid.
-- [PostSpark](https://postspark.app/), An online tool to create beatufule screenshots & mockups
 
 ## Author
 
