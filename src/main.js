@@ -1,3 +1,7 @@
+import './style.css';
+import './style-tablet.css';
+import './style-desktop.css';
+
 document.addEventListener("DOMContentLoaded", () => {
   const boxes = document.querySelectorAll(".bento-grid-item");
 
