@@ -239,7 +239,7 @@
     animation: clickButton 0.2s ease forwards;
   }
 
-  #ai-content h3 {
+  #ai-content h2 {
     margin-bottom: 16px;
     width: 100%;
   }
