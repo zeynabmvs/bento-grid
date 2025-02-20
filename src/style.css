@@ -389,6 +389,17 @@ body {
   max-width: 100%;
   height: auto;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* ======== Footer ======== */
 .attribution {
@@ -421,20 +432,13 @@ body:hover .cursor {
 }
 
 /* Github animated corner styles */
-
-.github-corner:hover .octo-face {
-  display: inline;
-}
-.github-corner .octo-face {
-  display: none;
-}
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
 @keyframes octocat-wave {
   0%,
   100% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   20%,
   60% {

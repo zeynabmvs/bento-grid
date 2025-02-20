@@ -59,7 +59,7 @@
   .bento-grid {
     display: grid;
     gap: var(--grid-gap);
-    padding-top: 32px;
+    padding-top: 80px;
     grid-template-areas:
       "subgrid1 subgrid2"
       "subgrid1 subgrid3";
