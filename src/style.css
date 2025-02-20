@@ -429,6 +429,11 @@ body {
 body:hover .cursor {
   transform: scale(2);
   box-shadow: 0 0 5px var(--purple-500), 0 0 10px var(--purple-500);
+  opacity: 1;
+}
+
+body:not(:hover) .cursor {
+  opacity: 0;
 }
 
 /* Github animated corner styles */
